@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.io</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chat.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          id="sidebarMenu"
+          class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+        >
+          <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <span data-feather="home"></span>
+                  チャットルーム１
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  チャットルーム２
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  チャットルーム３
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  チャットルーム４
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  チャットルーム５
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  チャットルーム６
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">SocketIOチャット</h1>
+            <div class="btn-toolbar mb-2 mb-md-0"></div>
+          </div>
+          <!-- STEP1. 接続中 -->
+          <section id="nowconnecting">...サーバに接続中</section>
+          <!-- /接続中 -->
+
+          <!-- STEP2. 名前を入力 -->
+          <section id="inputmyname">
+            <p>あなたの名前を入力してください</p>
+            <form id="frm-myname">
+              <input type="text" id="txt-myname" />
+              <button>入室</button>
+            </form>
+          </section>
+          <!-- /名前を入力 -->
+
+          <!-- STEP3. チャット開始 -->
+          <section id="chat">
+            <!-- 発言フォーム -->
+            <form id="frm-post">
+              <span id="myname"></span><br /><input type="text" id="msg" />
+              <button>送信</button>
+            </form>
+
+            <!-- 発言ログ -->
+            <ul id="msglist"></ul>
+          </section>
+          <!-- /チャット本体 -->
+        </main>
+      </div>
+    </div>
+    <script src="util.js"></script>
+    <script src="app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

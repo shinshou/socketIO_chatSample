@@ -1,0 +1,16 @@
+#inputmyname {
+  display: none;
+}
+#chat {
+  display: none;
+}
+#msglist {
+  list-style-type: none;
+  padding-left: 1px;
+}
+.msg-me {
+  color: blue;
+}
+.name {
+  font-weight: bold;
+}
